@@ -1,0 +1,27 @@
+﻿@model Treinamento.Web.Models.Entidade
+@using Europa.Resources
+
+@* Carrega o arquivo JavaScript principal da página *@
+<script src="~/Scripts/projeto/home/home.js"></script>
+<script>
+    @* Recebe as URLs que executam os métodos (ações) do controller da página Home *@
+    Europa.Controllers.Home.UrlGetEntidade = '@Url.Action("GetEntidade", "Home")';
+</script>
+
+<h1>@GlobalMessages.TituloTelaHome</h1>
+<div id="form-entidade">
+    <div class="col-md-24">
+        <form>
+
+            <div class="col-md-12">
+                @Html.Label(GlobalMessages.Nome)
+                @Html.TextBoxFor(x => x.Nome, null, new { @class = "form-control", disabled = "disabled" })
+            </div>
+            <div class="col-md-11 col-md-offset-1">
+                @Html.Label(GlobalMessages.Sobrenome)
+                @Html.TextBoxFor(x => x.Sobrenome, null, new { @class = "form-control", disabled = "disabled" })
+            </div>
+
+        </form>
+    </div>
+</div>

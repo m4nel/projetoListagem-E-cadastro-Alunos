@@ -1,0 +1,8 @@
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\bin\Debug\Europa.dll
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\bin\Debug\Europa.pdb
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\obj\Debug\Europa.csproj.AssemblyReference.cache
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\obj\Debug\Europa.Resources.GlobalMessages.resources
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\obj\Debug\Europa.csproj.GenerateResource.cache
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\obj\Debug\Europa.csproj.CoreCompileInputs.cache
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\obj\Debug\Europa.dll
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Europa\obj\Debug\Europa.pdb
