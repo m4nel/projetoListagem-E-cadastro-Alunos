@@ -123,6 +123,9 @@
   <data name="Sobrenome" xml:space="preserve">
     <value>Sobrenome</value>
   </data>
+  <data name="TituloTelaExercicio" xml:space="preserve">
+    <value>Alunos</value>
+  </data>
   <data name="TituloTelaHome" xml:space="preserve">
     <value>Tela de exemplo</value>
   </data>

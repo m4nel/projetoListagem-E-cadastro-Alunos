@@ -19,7 +19,7 @@ namespace Europa.Resources {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class GlobalMessages {
@@ -75,6 +75,15 @@ namespace Europa.Resources {
         public static string Sobrenome {
             get {
                 return ResourceManager.GetString("Sobrenome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Alunos.
+        /// </summary>
+        public static string TituloTelaExercicio {
+            get {
+                return ResourceManager.GetString("TituloTelaExercicio", resourceCulture);
             }
         }
         

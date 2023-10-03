@@ -1,0 +1,50 @@
+@model Treinamento.Web.Models.Aluno
+@using Europa.Resources
+
+<form class="" id="paginaDetalhamento">
+    
+    <div class="row m-0">
+        <h1 class="bg-light">Alunos - << NOME_DO_ALUNO >></h1>
+    </div>
+
+    <div class="row m-0">
+
+        <div class="col-md-4">
+            @Html.Label("Nome")
+            @Html.TextBoxFor(x => x.Nome, null, new { @class = "form-control", @id = "nome", disabled = "disabled", style = "width: 100%;" })
+        </div>
+        <div class="col-md-2">
+            @Html.Label("Matricula")
+            @Html.TextBoxFor(x => x.Matricula, null, new { @class = "form-control", @id = "matricula", disabled = "disabled" })
+        </div>
+
+        <div class="col-md-2">
+            @Html.Label("Situacao")
+            @Html.TextBoxFor(x => x.Situacao, null, new { @class = "form-control", @id = "situacao", disabled = "disabled" })
+        </div>
+        <div class="col-md-4">
+            @Html.Label("CPF")
+            @Html.TextBoxFor(x => x.CPFaluno, null, new { @class = "form-control", @id = "cpf", disabled = "disabled", style = "width: 100%;", onkeypress = "$(this).mask('000.000.000-00');" })
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-md-4">
+            @Html.Label("Nome da Mãe")
+            @Html.TextBoxFor(x => x.NomeMae, null, new { @class = "form-control", @id = "nomeMae", disabled = "disabled" })
+        </div>
+        <div class="col-md-5">
+            @Html.Label("Curso")
+            @Html.TextBoxFor(x => x.Curso, null, new { @class = "form-control", @id = "curso", disabled = "disabled" })
+        </div>
+        <div class="col-md-3">
+            @Html.Label("Data de nascimento")
+            @Html.TextBoxFor(x => x.DataNascimento, null, new { @class = "form-control", @id = "dataNascimento", @disabled = "disabled", onkeypress = "$(this).mask('00/00/0000')" })
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-md-12 row m-0">
+            @Html.LabelFor(x => x.Observacoes, "Observações")
+            @Html.TextAreaFor(x => x.Observacoes, new { @class = "form-control", @id = "observacoes", @disabled = "disabled", style = "width: 100%;" })
+        </div>
+    </div>
+</form>

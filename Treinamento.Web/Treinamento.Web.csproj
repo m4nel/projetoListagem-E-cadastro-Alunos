@@ -160,9 +160,12 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ExercicioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Enum\CursoTipo.cs" />
+    <Compile Include="Enum\SituacaoTipo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Entidade.cs" />
     <Compile Include="Models\JsonResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,6 +260,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Exercicio\Index.cshtml" />
+    <Content Include="Views\Exercicio\PaginaDetalhamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
