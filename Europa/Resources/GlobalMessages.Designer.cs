@@ -61,6 +61,114 @@ namespace Europa.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CPF.
+        /// </summary>
+        public static string CpfInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("CpfInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CPF.
+        /// </summary>
+        public static string CpfModalInput {
+            get {
+                return ResourceManager.GetString("CpfModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a CPF.
+        /// </summary>
+        public static string CpfTelaPrincipal {
+            get {
+                return ResourceManager.GetString("CpfTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Curso.
+        /// </summary>
+        public static string CursoInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("CursoInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Curso.
+        /// </summary>
+        public static string CursoModalInput {
+            get {
+                return ResourceManager.GetString("CursoModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Curso.
+        /// </summary>
+        public static string CursoTelaPrincipal {
+            get {
+                return ResourceManager.GetString("CursoTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Data de Nascimento.
+        /// </summary>
+        public static string DataNascimentoInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("DataNascimentoInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nascimento.
+        /// </summary>
+        public static string DataNascimentoTelaPrincipal {
+            get {
+                return ResourceManager.GetString("DataNascimentoTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Matricula.
+        /// </summary>
+        public static string MatriculaInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("MatriculaInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Matrícula.
+        /// </summary>
+        public static string MatriculaModalInput {
+            get {
+                return ResourceManager.GetString("MatriculaModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Matrícula.
+        /// </summary>
+        public static string MatriculaTelaPrincipal {
+            get {
+                return ResourceManager.GetString("MatriculaTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Data Nascimento.
+        /// </summary>
+        public static string NascimentoModalInput {
+            get {
+                return ResourceManager.GetString("NascimentoModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Nome.
         /// </summary>
         public static string Nome {
@@ -70,11 +178,146 @@ namespace Europa.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome.
+        /// </summary>
+        public static string NomeInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("NomeInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome da Mãe.
+        /// </summary>
+        public static string NomeMaeInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("NomeMaeInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome Mãe.
+        /// </summary>
+        public static string NomeMaeModalInput {
+            get {
+                return ResourceManager.GetString("NomeMaeModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome Mãe.
+        /// </summary>
+        public static string NomeMaeTelaPrincipal {
+            get {
+                return ResourceManager.GetString("NomeMaeTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome.
+        /// </summary>
+        public static string NomeModalInput {
+            get {
+                return ResourceManager.GetString("NomeModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Nome.
+        /// </summary>
+        public static string NomeTelaPrincipal {
+            get {
+                return ResourceManager.GetString("NomeTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Observações.
+        /// </summary>
+        public static string ObservaçõesInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("ObservaçõesInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Observações.
+        /// </summary>
+        public static string ObservacoesModalInput {
+            get {
+                return ResourceManager.GetString("ObservacoesModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Observações.
+        /// </summary>
+        public static string ObservacoesTelaPrincipal {
+            get {
+                return ResourceManager.GetString("ObservacoesTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Situação.
+        /// </summary>
+        public static string SituaçãoInputTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("SituaçãoInputTelaDetalhamento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Situação.
+        /// </summary>
+        public static string SituacaoModalInput {
+            get {
+                return ResourceManager.GetString("SituacaoModalInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Situação.
+        /// </summary>
+        public static string SituaçãoTelaPrincipal {
+            get {
+                return ResourceManager.GetString("SituaçãoTelaPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Sobrenome.
         /// </summary>
         public static string Sobrenome {
             get {
                 return ResourceManager.GetString("Sobrenome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ações.
+        /// </summary>
+        public static string TelaPrincipalAcoes {
+            get {
+                return ResourceManager.GetString("TelaPrincipalAcoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Aluno.
+        /// </summary>
+        public static string TituloModal {
+            get {
+                return ResourceManager.GetString("TituloModal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Aluno.
+        /// </summary>
+        public static string TituloTelaDetalhamento {
+            get {
+                return ResourceManager.GetString("TituloTelaDetalhamento", resourceCulture);
             }
         }
         

@@ -17,6 +17,7 @@ C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinament
 C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\Microsoft.Managed.Core.CurrentVersions.targets
 C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\Microsoft.Managed.Core.targets
 C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\emanu\Desktop\TreinamentoWeb - Listagem e cadastro de Alunos\Treinamento.Web\bin\roslyn\System.Buffers.dll

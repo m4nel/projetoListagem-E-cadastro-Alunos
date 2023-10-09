@@ -13,6 +13,8 @@ namespace Treinamento.Web.Controllers
 
         private static int IncrementaId = 1;
 
+        private static Aluno Aluno { get; set; } = new Aluno();
+
         public ExercicioController()
         {
          
@@ -20,14 +22,37 @@ namespace Treinamento.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(Alunos);
+        }        
+        public ActionResult PaginaDetalhamento()
+        {
+            return View(Aluno);
         }
 
-        //public JsonResult ListarAlunos()
-        //{
-        //    return JsonResult();
-        //    // Listar Alunos na tela que foram adicionado a lista de Alunos -incompleto 
-        //}
+        [HttpGet]
+        public JsonResult Detalhamento(int? alunoId)
+        {
+            var json = new JsonResponse();
+
+            var aluno = Alunos.FirstOrDefault(batata => batata.Id == alunoId);
+
+            if (aluno == null)
+            {
+                json.Sucesso = false;
+                json.Mensagens.Add("id de Aluno invalido");
+                return Json(json);
+            }
+
+            var alunoHtml = RenderRazorViewToString("~/Views/Exercicio/PaginaDetalhamento.cshtml", aluno, false);
+
+            Aluno = aluno;
+
+            json.Objeto = alunoHtml;
+            json.Sucesso = true;
+            json.Mensagens.Add("aluno passado para pagina");
+
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
 
         [HttpPost]
         public JsonResult CadastrarAluno(Aluno aluno)
@@ -41,12 +66,11 @@ namespace Treinamento.Web.Controllers
                 return Json(json, JsonRequestBehavior.AllowGet);
             }
 
+
             aluno.Id = IncrementaId++;
             Alunos.Add(aluno);
 
-            var alunoHtml = RenderRazorViewToString("~/Views/Exercicio/Index.cshtml", aluno, false);
-
-            json.Objeto = alunoHtml;
+            json.Objeto = Alunos;
             json.Sucesso = true;
             json.Mensagens.Add("Aluno Inserido com sucesso!");
 

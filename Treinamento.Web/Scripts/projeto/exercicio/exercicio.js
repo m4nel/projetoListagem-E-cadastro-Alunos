@@ -7,18 +7,12 @@ function AbrirModal() {
     $("#meuModal").modal("show");
 }
 
-function abrirAbaDetalhamento() {
-
-}
-
 function SalvarModal() {
     Europa.Controllers.Exercicio.CadastrarAluno();
 };
 
 function fecharModal() {
-
     $("#meuModal").modal("hide");
-
 }
 
 Europa.Controllers.Exercicio.CadastrarAluno = function () {
@@ -42,9 +36,8 @@ Europa.Controllers.Exercicio.CadastrarAluno = function () {
 
         success: function (result) {
             sucesso = true;
-            /*location.reload();*/
+            location.reload();
             fecharModal();
-            $("#listaAluno").html(result.Objeto);
         },
 
         error: function (error) {
@@ -52,4 +45,18 @@ Europa.Controllers.Exercicio.CadastrarAluno = function () {
             alert(error, "Não foi possivel Cadastrar")
         }
     });
+
 };
+
+
+function PaginaDetalhamento(alunoId) {
+
+    Europa.Controllers.Exercicio.PaginaDetalhamento(alunoId); 
+
+}
+Europa.Controllers.Exercicio.PaginaDetalhamento = function (alunoId) {
+
+    $.get(Europa.Controllers.Exercicio.UrlDetalhamento, { alunoId }, function (res) {
+        $("#form-aluno").html(res.Objeto);
+    })
+} 

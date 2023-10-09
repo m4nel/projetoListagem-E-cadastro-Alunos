@@ -1,4 +1,4 @@
-@model Treinamento.Web.Models.Aluno
+@model List<Treinamento.Web.Models.Aluno>
 @using Europa.Resources
 
 @* Carrega o arquivo JavaScript principal da página *@
@@ -7,91 +7,82 @@
     @* Recebe as URLs que executam os métodos (ações) do controller da página Home *@
     Europa.Controllers.Exercicio.UrlGetAluno = '@Url.Action("GetAluno", "Exercicio")';
     Europa.Controllers.Exercicio.UrlCadastrarAluno = '@Url.Action("CadastrarAluno", "Exercicio")'
+    Europa.Controllers.Exercicio.UrlDetalhamento = '@Url.Action("Detalhamento", "Exercicio")'
 </script>
 
-<div id="form-aluno">
-    <div class="bg-danger">
+<div id="">
+    <div class="">
         <h1>@GlobalMessages.TituloTelaExercicio</h1>
     </div>
-    <div class="bg-black d-flex justify-content-end">
-        <button type="button" class="btn btn-success m-1 col-md-2" onclick="AbrirModal()">Incluir</button>
-        <button onclick="abrirAbaDetalhamento()">Olho Da lista</button>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-success m-1 col-md-1" onclick="AbrirModal()"><i class="fa fa-plus" aria-hidden="true"></i> Incluir</button>
     </div>
     <div class="col-md-24">
-        <form class="bg-secondary">
-
+        <form class="">
             <div class="col-sm-6 col-md-12">
-                <div class="row m-0 border border-dark border-3" id="listaAluno">
-                    <div class="col-md-1 border border-dark border-3">
-                        <h4 class="">Ações</h4>
-                        
-                        @Html.TextBoxFor(x => x.Matricula, null, new { @class = "form-control", disabled = "disabled" })
-                        
-                    </div>
-                    <div class="col-md-1 border border-dark border-3">
-                        <h4 class="">Nome</h4>
-                    </div>
-                    <div class=" col-md-2 border border-dark border-3">
-                        <h4 class="">Matricula</h4>
-                    </div>
-                    <div class=" col-md-1 border border-dark border-3">
-                        <h4 class="">Situação</h4>
-                    </div>
-                    <div class=" col-md-1 border border-dark border-3">
-                        <h4 class="">CPF</h4>
-                    </div>
-                    <div class=" col-md-1 border border-dark border-3">
-                        <h4 class="">Nome Mãe</h4>
-                    </div>
-                    <div class=" col-md-1 border border-dark border-3">
-                        <h4 class="">Curso</h4>
-                    </div>
-                    <div class=" col-md-2 border border-dark border-3">
-                        <h4 class="">Nascimento</h4>
-                    </div>
-                    <div class="col-md-2 border border-dark border-3">
-                        <h4 class="">Observações</h4>
-                    </div>
+                <div class="row m-0" id="listaAluno">
+                    <table class="table table-striped table-bordered border-dark border-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">@GlobalMessages.TelaPrincipalAcoes</th>
+                                <th scope="col">@GlobalMessages.NomeTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.MatriculaTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.SituaçãoTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.CpfTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.NomeMaeTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.CursoTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.DataNascimentoTelaPrincipal</th>
+                                <th scope="col">@GlobalMessages.ObservacoesTelaPrincipal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td scope="row" value="">
+                                        <a href='http://localhost/treinamento-web/Exercicio/PaginaDetalhamento?id=@item.Id' target="_blank" onclick="PaginaDetalhamento('@item.Id')">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                    <td>@Html.DisplayFor(ModelItem => item.Nome)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.Matricula)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.Situacao)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.CPFaluno)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.NomeMae)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.Curso)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.DataNascimento)</td>
+                                    <td>@Html.DisplayFor(ModelItem => item.Observacoes)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
-
             </div>
-
-            @*<div class="col-md-12">
-                @Html.Label(GlobalMessages.Nome)
-                @Html.TextBoxFor(x => x.Nome, null, new { @class = "form-control", disabled = "disabled" })
-            </div>
-            <div class="col-md-12 col-md-offset-1">
-                @Html.Label(GlobalMessages.Sobrenome)
-                @Html.TextBoxFor(x => x.Sobrenome, null, new { @class = "form-control", disabled = "disabled" })
-            </div>*@
-
         </form>
     </div>
 </div>
-
- @*ModalIncluir    ModalINCLUIR*@
+@*ModalIncluir    ModalINCLUIR*@
 
 <div class="modal " tabindex="-1" role="dialog" id="meuModal">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title">@GlobalMessages.TituloModal</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModal()">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="row modal-body">
-
-                <div class="col-3">
-                    <label>Nome</label>
+            <div class="row modal-body m-0">
+                <div class="row col-3 m-0 p-0">
+                    <label class="p-0">@GlobalMessages.NomeModalInput</label>
                     <input id="nomeModal" class="align-content-center" />
                 </div>
-                <div class="col-3">
-                    <label>Matricula</label>
+                <div class="row col-3 m-0">
+                    <label>@GlobalMessages.MatriculaModalInput</label>
                     <input id="matriculaModal" />
                 </div>
-                <div class="col-3">
-                    <label>Situação</label>
+                <div class="row col-3 m-0">
+                    <label>@GlobalMessages.SituacaoModalInput</label>
                     <select class="form-select col-3" aria-label="Default select example" id="situacaoModal">
                         <option selected value="">Selecione</option>
                         <option value="@TreinamentoWeb.Enum.SituacaoTipo.Ativo">Ativo</option>
@@ -99,17 +90,17 @@
                         <option value="@TreinamentoWeb.Enum.SituacaoTipo.Cancelado">Cancelado</option>
                     </select>
                 </div>
-                <div class="col-3">
-                    <label>CPF</label>
+                <div class="row col-3 m-0">
+                    <label>@GlobalMessages.CpfModalInput</label>
                     <input id="cpfModal" onkeypress="$(this).mask('000.000.000-00');" />
 
                 </div>
                 <div class="col-4">
-                    <label>Nome Mãe</label>
+                    <label>@GlobalMessages.NomeMaeModalInput</label>
                     <input id="nomeMaeModal" />
                 </div>
                 <div class="col-4">
-                    <label>Curso</label>
+                    <label>@GlobalMessages.CursoModalInput</label>
                     <select class="form-select" aria-label="Default select example" id="cursoModal">
                         <option selected value="">Selecione</option>
                         <option value="@TreinamentoWeb.Enum.CursoTipo.Matematica">Java</option>
@@ -120,11 +111,11 @@
                     </select>
                 </div>
                 <div class="col-4">
-                    <label>Data Nascimento</label>
+                    <label>@GlobalMessages.NascimentoModalInput</label>
                     <input id="dataNascimentoModal" onkeypress="$(this).mask('00/00/0000')" />
                 </div>
                 <div class="col-12 row ms-1">
-                    <label>Observações</label>
+                    <label>@GlobalMessages.ObservacoesModalInput</label>
                     <textarea id="obsModal" class=""></textarea>
                 </div>
             </div>
@@ -137,51 +128,3 @@
     </div>
 </div>
 
-@*// Pagina detalhamento*@
-
-@*<form class="" style="display: none"  id="paginaDetalhamento">
-    <div class="row m-0">
-        <h1 class="bg-light">Alunos - << NOME_DO_ALUNO >></h1>
-    </div>
-
-    <div class="row m-0">
-
-        <div class="col-md-4">
-            @Html.Label("Nome")
-            @Html.TextBoxFor(x => x.Nome, null, new { @class = "form-control", @id = "nome", disabled = "disabled", style = "width: 100%;" })
-        </div>
-        <div class="col-md-2">
-            @Html.Label("Matricula")
-            @Html.TextBoxFor(x => x.Matricula, null, new { @class = "form-control", @id = "matricula", disabled = "disabled" })
-        </div>
-
-        <div class="col-md-2">
-            @Html.Label("Situacao")
-            @Html.TextBoxFor(x => x.Situacao, null, new { @class = "form-control", @id = "situacao", disabled = "disabled" })
-        </div>
-        <div class="col-md-4">
-            @Html.Label("CPF")
-            @Html.TextBoxFor(x => x.CPFaluno, null, new { @class = "form-control", @id = "cpf", disabled = "disabled", style = "width: 100%;", onkeypress = "$(this).mask('000.000.000-00');" })
-        </div>
-    </div>
-    <div class="row m-0">
-        <div class="col-md-4">
-            @Html.Label("Nome da Mãe")
-            @Html.TextBoxFor(x => x.NomeMae, null, new { @class = "form-control", @id = "nomeMae", disabled = "disabled" })
-        </div>
-        <div class="col-md-5">
-            @Html.Label("Curso")
-            @Html.TextBoxFor(x => x.Curso, null, new { @class = "form-control", @id = "curso", disabled = "disabled" })
-        </div>
-        <div class="col-md-3">
-            @Html.Label("Data de nascimento")
-            @Html.TextBoxFor(x => x.DataNascimento, null, new { @class = "form-control", @id = "dataNascimento", @disabled = "disabled", onkeypress = "$(this).mask('00/00/0000')" })
-        </div>
-    </div>
-    <div class="row m-0">
-        <div class="col-md-12 row m-0">
-            @Html.LabelFor(x => x.Observacoes, "Observações")
-            @Html.TextAreaFor(x => x.Observacoes, new { @class = "form-control", @id = "observacoes", @disabled = "disabled", style = "width: 100%;" })
-        </div>
-    </div>
-</form>*@
