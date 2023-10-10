@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-2">
             @Html.Label(GlobalMessages.MatriculaInputTelaDetalhamento)
-            @Html.TextBoxFor(x => x.Matricula, null, new { @class = "form-control", @id = "matricula", disabled = "disabled" })
+            @Html.TextBoxFor(x => x.Matricula, null, new { @class = "form-control", @id = "matricula", disabled = "disabled", InputType = "number" })
         </div>
         <div class="col-md-2">
             @Html.Label(GlobalMessages.SituaçãoInputTelaDetalhamento)
@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-4">
             @Html.Label(GlobalMessages.CpfInputTelaDetalhamento)
-            @Html.TextBoxFor(x => x.CPFaluno, null, new { @class = "form-control", @id = "cpf", disabled = "disabled", style = "width: 100%;", @onkeypress = "$(this).mask('000.000.000-00');" })
+            @Html.TextBoxFor(x => x.CPFaluno, null, new { @class = "form-control", @id = "cpf", disabled = "disabled", style = "width: 100%;", @onkeypress = "$(this).mask('000.000.000-00');" , InputType = "number" })
         </div>
     </div>
     <div class="row m-0">
@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-3">
             @Html.Label(GlobalMessages.DataNascimentoInputTelaDetalhamento)
-            @Html.TextBoxFor(x => x.DataNascimento, null, new { @class = "form-control", @id = "dataNascimento", @disabled = "disabled", @onkeypress = "$(this).mask('00/00/0000');" })
+            <input type="text" class="form-control" id="datanascimento" disabled="disabled" inputmode="numeric" pattern="[0-9]*" onkeypress="$(this).mask('00/00/0000');" value="@Model.DataNascimento.ToString("dd/MM/yyyy")"/>
         </div>
     </div>
     <div class="row m-0">

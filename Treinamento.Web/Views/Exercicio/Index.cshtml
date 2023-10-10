@@ -37,23 +37,23 @@
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td scope="row" value="">
-                                        <a href='http://localhost/treinamento-web/Exercicio/PaginaDetalhamento?id=@item.Id' target="_blank" onclick="PaginaDetalhamento('@item.Id')">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                        </a>
-                                    </td>
-                                    <td>@Html.DisplayFor(ModelItem => item.Nome)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.Matricula)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.Situacao)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.CPFaluno)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.NomeMae)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.Curso)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.DataNascimento)</td>
-                                    <td>@Html.DisplayFor(ModelItem => item.Observacoes)</td>
-                                </tr>
-                            }
+                                {
+                                    <tr>
+                                        <td scope="row" value="" class="text-center">
+                                            <a href='http://localhost/treinamento-web/Exercicio/PaginaDetalhamento?id=@item.Id' target="_blank" onclick="PaginaDetalhamento('@item.Id')">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                        <td>@Html.DisplayFor(ModelItem => item.Nome)</td>
+                                        <td>@Html.DisplayFor(ModelItem => item.Matricula)</td>
+                                        <td>@Html.DisplayFor(ModelItem => item.Situacao)</td>
+                                        <td>@Html.DisplayFor(ModelItem => item.CPFaluno)</td>
+                                        <td>@Html.DisplayFor(ModelItem => item.NomeMae)</td>
+                                        <td>@Html.DisplayFor(ModelItem => item.Curso)</td>
+                                        <td>@item.DataNascimento.ToString("dd/MM/yyyy")</td>
+                                        <td>@Html.DisplayFor(ModelItem => item.Observacoes)</td>
+                                    </tr>
+                                }
                         </tbody>
                     </table>
                 </div>
@@ -68,8 +68,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">@GlobalMessages.TituloModal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="fecharModal()">
-                    <span aria-hidden="true">&times;</span>
+                <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal" onclick="fecharModal()">
                 </button>
             </div>
             <div class="row modal-body m-0">
@@ -78,11 +77,11 @@
                     <input id="nomeModal" class="align-content-center" />
                 </div>
                 <div class="row col-3 m-0">
-                    <label>@GlobalMessages.MatriculaModalInput</label>
+                    <label class="p-0">@GlobalMessages.MatriculaModalInput</label>
                     <input id="matriculaModal" />
                 </div>
                 <div class="row col-3 m-0">
-                    <label>@GlobalMessages.SituacaoModalInput</label>
+                    <label class="p-0">@GlobalMessages.SituacaoModalInput</label>
                     <select class="form-select col-3" aria-label="Default select example" id="situacaoModal">
                         <option selected value="">Selecione</option>
                         <option value="@TreinamentoWeb.Enum.SituacaoTipo.Ativo">Ativo</option>
@@ -90,17 +89,17 @@
                         <option value="@TreinamentoWeb.Enum.SituacaoTipo.Cancelado">Cancelado</option>
                     </select>
                 </div>
-                <div class="row col-3 m-0">
-                    <label>@GlobalMessages.CpfModalInput</label>
+                <div class="row col-3 m-0 p-0">
+                    <label class="p-0">@GlobalMessages.CpfModalInput</label>
                     <input id="cpfModal" onkeypress="$(this).mask('000.000.000-00');" />
 
                 </div>
-                <div class="col-4">
-                    <label>@GlobalMessages.NomeMaeModalInput</label>
+                <div class="col-4 row m-0 p-0">
+                    <label class="p-0">@GlobalMessages.NomeMaeModalInput</label>
                     <input id="nomeMaeModal" />
                 </div>
-                <div class="col-4">
-                    <label>@GlobalMessages.CursoModalInput</label>
+                <div class="col-4 row m-0">
+                    <label class="p-0">@GlobalMessages.CursoModalInput</label>
                     <select class="form-select" aria-label="Default select example" id="cursoModal">
                         <option selected value="">Selecione</option>
                         <option value="@TreinamentoWeb.Enum.CursoTipo.Matematica">Java</option>
@@ -110,19 +109,19 @@
                         <option value="@TreinamentoWeb.Enum.CursoTipo.Geografia">Delphi</option>
                     </select>
                 </div>
-                <div class="col-4">
-                    <label>@GlobalMessages.NascimentoModalInput</label>
+                <div class="col-4 row m-0 p-0">
+                    <label class="p-0">@GlobalMessages.NascimentoModalInput</label>
                     <input id="dataNascimentoModal" onkeypress="$(this).mask('00/00/0000')" />
                 </div>
-                <div class="col-12 row ms-1">
-                    <label>@GlobalMessages.ObservacoesModalInput</label>
+                <div class="col-12 row p-0 m-0">
+                    <label class="p-0">@GlobalMessages.ObservacoesModalInput</label>
                     <textarea id="obsModal" class=""></textarea>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="salvarModal btn btn-primary" onclick="SalvarModal()">Salvar Alterações</button>
-                <button type="button" class="fecharModal btn btn-secondary" data-dismiss="modal" onclick="fecharModal()">Fechar</button>
+                <button type="button" class="salvarModal btn btn-primary" onclick="SalvarModal()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <button type="button" class="fecharModal btn btn-danger" data-dismiss="modal" onclick="fecharModal()"><i class="fa fa-ban" aria-hidden="true"></i> Desistir</button>
             </div>
         </div>
     </div>

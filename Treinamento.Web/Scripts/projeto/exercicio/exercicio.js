@@ -28,6 +28,20 @@ Europa.Controllers.Exercicio.CadastrarAluno = function () {
         Observacoes: $('#obsModal').val(),
     };
 
+    let messageFaltaAlgo = "";
+
+    for (let key in obj) {
+        if (!obj[key]) {
+            messageFaltaAlgo += `Faltou adicionar o ${key}!!\n`;
+        }
+    }
+
+    if (messageFaltaAlgo) {
+        return alert(messageFaltaAlgo);
+    } else
+
+    {
+
     $.ajax({
         type: 'POST',
         url: Europa.Controllers.Exercicio.UrlCadastrarAluno,
@@ -41,21 +55,17 @@ Europa.Controllers.Exercicio.CadastrarAluno = function () {
         },
 
         error: function (error) {
-
             alert(error, "Não foi possivel Cadastrar")
         }
     });
+    }
 
 };
 
-
 function PaginaDetalhamento(alunoId) {
-
     Europa.Controllers.Exercicio.PaginaDetalhamento(alunoId); 
-
 }
 Europa.Controllers.Exercicio.PaginaDetalhamento = function (alunoId) {
-
     $.get(Europa.Controllers.Exercicio.UrlDetalhamento, { alunoId }, function (res) {
         $("#form-aluno").html(res.Objeto);
     })
